@@ -10,13 +10,17 @@ void draw()
   background(0);
   for(int y=25; y<=300; y+=100)
   {
-    for(int x=25; x<=350; x+=100)
+    for(int x=25; x<=300; x+=100)
     {
       Die bob = new Die(x,y);
       bob.show();
       bob.roll();
     }
   }
+    textSize(30);
+    text("TOTAL =",50,350);
+    text(total,190,350);
+
 }
 
 void mousePressed()
@@ -27,11 +31,10 @@ void mousePressed()
 
 class Die //models one single dice cube
 {
-  int myX, myY, num, total;
+  int myX, myY, num;
   
   Die(int x, int y) //constructor
   {
-    //roll();
     myX=x;
     myY=y;
     num=(int)((Math.random()*6)+1);
@@ -55,33 +58,33 @@ class Die //models one single dice cube
     }
     else if(num==3)
     {
-      ellipse(myX, myY,6,6);
-      ellipse(myX, myY,6,6);
-      ellipse(myX, myY,6,6);
+      ellipse(myX+15, myY+15,6,6);
+      ellipse(myX+25, myY+25,6,6);
+      ellipse(myX+35, myY+35,6,6);
     }
     else if(num==4)
     {
-      ellipse(myX, myY,6,6);
-      ellipse(myX, myY,6,6);
-      ellipse(myX, myY,6,6);
-      ellipse(myX, myY,6,6);
+      ellipse(myX+17, myY+17,6,6);
+      ellipse(myX+33, myY+17,6,6);
+      ellipse(myX+17, myY+33,6,6);
+      ellipse(myX+33, myY+33,6,6);
     }
     else if(num==5)
     {
-      ellipse(myX, myY,6,6);
-      ellipse(myX, myY,6,6);
-      ellipse(myX, myY,6,6);
-      ellipse(myX, myY,6,6);
-      ellipse(myX, myY,6,6);
+      ellipse(myX+25, myY+25 ,6,6);
+      ellipse(myX+15, myY+15,6,6);
+      ellipse(myX+35, myY+15,6,6);
+      ellipse(myX+15, myY+35,6,6);
+      ellipse(myX+35, myY+35,6,6);
     }
     else if(num==6)
     {
-      ellipse(myX, myY,6,6);
-      ellipse(myX, myY,6,6);
-      ellipse(myX, myY,6,6);
-      ellipse(myX, myY,6,6);
-      ellipse(myX, myY,6,6);
-      ellipse(myX, myY,6,6);
+      ellipse(myX+18, myY+12,6,6);
+      ellipse(myX+18, myY+25,6,6);
+      ellipse(myX+18, myY+38,6,6);
+      ellipse(myX+32, myY+12,6,6);
+      ellipse(myX+32, myY+25,6,6);
+      ellipse(myX+32, myY+38,6,6);
     }
   }
 }
